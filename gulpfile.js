@@ -266,7 +266,7 @@ function scriptsBuild () {
 
 
 
-exports.build = series(clear, parallel(pug, scriptsBuild, fonts, resources, imgToApp, svgSpritesg), fontsStyle, sassBuild);
+exports.build = series(clear, parallel(pug, scriptsBuild, fonts, resources, imgToApp, svgSprites), fontsStyle, sassBuild);
 
 
 
