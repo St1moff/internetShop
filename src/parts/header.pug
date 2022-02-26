@@ -12,6 +12,17 @@ header.header
                     a.nav__link(href="#") Blog
                 li.nav__item
                     a.nav__link(href="#") Page 
-            a.logo.header_l_ogo(href="#")  
-                svg
-                    use(xlink:href='img/sprite.svg#logo')
+        a.logo.header__logo(href="#" aria-lable="logo")  
+            svg
+                use(xlink:href='img/sprite.svg#logo' )
+        ul.shop-nav.header__shop-nav 
+            li.shop-nav__item 
+                form.shop-nav__search-form.search-form(action="#")
+                    button.search-form__btn.btn-reset(aria-lable="Find")
+            li.shop-nav__item 
+                a.shop-nav__link.shop-nav__link--user(href="#" aria-lable="Go to cabinet") 
+            li.shop-nav__item 
+                a.shop-nav__link.cart(href="#" aria-lable="Go to cart")
+                    span.cart__icon 
+                    span.cart__quantity 3
+

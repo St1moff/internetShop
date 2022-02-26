@@ -1,0 +1,45 @@
+.shop-nav
+  display: flex
+  align-items: center
+  &__item
+      &:not(:last-child) 
+        margin-right: 28px
+  &__link
+    display: inline-block
+    width: 16px
+    height: 16px
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    &--user
+      background-image: url("../img/user.png")
+.cart
+  width: auto
+  height: auto
+  &__icon
+    width: 16px
+    height: 16px
+    display: inline-block
+    background-image: url("../img/cart.png")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+  &__quantity
+    display: inline-flex
+    align-items: center
+    background-color: var(--color-dark)
+    color: var(--color-white)
+    height: 16px
+    padding: 0 5px  
+    border-radius: 25px
+    font-size: 10px
+    font-weight: 700
+.search-form
+    width: 16px
+    height: 16px
+    display: inline-block
+    background-image: url("../img/search.png")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+

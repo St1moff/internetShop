@@ -9,8 +9,15 @@ img
 a
 	text-decoration: none
 	color: #000
+	margin: 0
+	padding: 0
 ul
 	list-style: none
+	padding: 0
+	margin: 0
+li
+	list-style: none
+	margin: 0
 	padding: 0
 .is-outer
 	position: relative !important
@@ -39,7 +46,9 @@ ul
 	:focus
 		&:not(.focus-visible)
 			outline: none
-			
+.visually-hidden
+	// visibility: hidden	
+	display: none
 
 body
 	margin: 0
@@ -47,3 +56,7 @@ body
 	font-weight: 500
 	background-color: var(--color-white)
 	color: var(--color-dark)
+
+	h1, h2, h3, h4, h5, h6
+		margin: 0
+		padding: 0

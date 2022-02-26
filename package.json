@@ -37,6 +37,7 @@
     "gulp-uglify-es": "^3.0.0",
     "gulp-util": "^3.0.8",
     "gulp-webpack": "^1.5.0",
+    "swiper": "^8.0.6",
     "vinyl-ftp": "^0.6.1",
     "webpack-stream": "^7.0.0"
   }
