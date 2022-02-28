@@ -187,7 +187,24 @@ function scripts () {
 		.pipe(dest('app/js'))
 
 }
+function vendorJS() {
+  const modules = [
+    'node_modules/swiper/swiper-bundle.min.js',
+    'node_modules/swiper/swiper-bundle.min.js.map',
+  ];
 
+  return src(modules)
+    .pipe(dest('app/vendorFiles'));
+};
+
+function vendorCSS() {
+  const modules = [
+    'node_modules/swiper/swiper-bundle.min.css',
+  ];
+
+  return src(modules)
+    .pipe(dest('app/vendorFiles'));
+};
 function clear() {
   return del('app')
 }
@@ -219,7 +236,7 @@ exports.svgSprites = svgSprites
 exports.sass = sass
 exports.html = html
 exports.scripts = scripts
-exports.serve = series(clear, parallel(pug, scripts, fonts, resources, imgToApp, svgSprites), fontsStyle, sass, serve);
+exports.serve = series(clear, parallel(pug, scripts, fonts, resources, imgToApp, svgSprites, vendorJS, vendorCSS), fontsStyle, sass, serve);
 exports.clear = clear
 
 
