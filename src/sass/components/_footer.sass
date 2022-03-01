@@ -1,0 +1,101 @@
+.footer
+  &__content
+    padding: 0 250px
+
+  &__top
+    display: flex
+    justify-content: space-between
+    padding-bottom: 95px
+  &__column
+    &:nth-child(2)
+      margin-left: -40px
+  &__title
+    font-size: 16px
+    font-weight: 700
+    margin: 0
+    margin-bottom: 38px
+  &__item
+    &:not(:last-child)
+      margin-bottom: 18px
+      &:not(:last-child)
+        margin-right: 43px
+  &__list
+    &--row
+      display: flex
+      align-items: center
+      .footer__item
+        margin-bottom: 0
+  &__link
+    font-size: 13px
+    color: var(--color-tundora)
+    &--row
+      font-size: 13px
+      font-weight: 700
+      color: var(--color-dark)
+  &__form
+    transform: translateY(3px)
+    width: 650px
+    margin-bottom: 25px
+  &__text
+    color: var(--color-tundora)
+    font-size: 13px
+    font-weight: 500
+  &__bottom
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border-top: 1px solid #eeeeee
+    padding: 40px 0
+  &__social
+    margin-right: 12px
+.subscribe-form
+  &__title
+    color: var(--color-tundora)
+    font-size: 13px
+    font-weight: 500
+    margin-bottom: 37px
+  &__btn
+    position: absolute
+    right: 0
+    bottom: 0
+    font-size: 13px
+    z-index: 2
+    font-weight: 500
+    color: var(--color-dark)
+    padding: 13px
+  &__field
+    display: block
+    border-bottom: 2px solid var(--color-dark)
+    padding-bottom: 10px
+    width: 100%
+    input
+      border: none
+      width: 100%
+      color: var(--color-dark)
+      font-size: 13px
+      font-weight: 500
+      padding-right: 80px
+      &::placeholder
+        color: rbga(#454545, 0.5)
+.social
+  display: flex
+  align-items: center
+  &__item
+      &:not(last-child)
+        margin-right: 29px
+  &__link
+    display: block
+    width: 16px
+    height: 16px
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    &--tw
+      background-image: url("../img/twitter.png")
+    &--fb
+      background-image: url("../img/facebook.png")
+    &--in
+      background-image: url("../img/instagram.png")
+    &--pin
+      background-image: url("../img/pinterest.png")
+

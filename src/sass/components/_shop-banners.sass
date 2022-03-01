@@ -1,0 +1,41 @@
+.shop-banners
+  &__container
+    display: flex
+    justify-content: space-between
+    padding-top: 46px
+    padding-bottom: 96px
+.shop-banner
+  position: relative
+  height: 420px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  width: 50%
+  color: var(--color-white)
+  background-color: var(--color-dark)
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  &::before
+    content: ""
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(#d70808, 0.1)
+  &__title
+    font-size: 48px
+    font-weight: 500
+  &__link
+    margin-top: 18px
+    font-size: 15px
+    font-weight: 500
+
+  &--men
+    background-image: url("./img/banner4.png")
+  &--women
+    background-image: url("./img/banner5.png")
+
+
