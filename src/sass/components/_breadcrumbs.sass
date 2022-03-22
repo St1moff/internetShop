@@ -1,0 +1,24 @@
+.breadcrumbs
+  padding: 13px 0
+  padding-bottom: 23px
+  border-bottom: 1px solid #eeeeee
+  &__list
+    display: flex
+    align-items: center
+  &__item
+    &:not(:last-child)
+      margin-right: 33px
+      position: relative
+      &::after
+        content: "/"
+        position: absolute
+        right: -20px
+        top: 3px
+        font-size: 10px
+        color: #858585
+  &__link
+    color: #858585
+    font-size: 10px
+    text-transform: uppercase
+    &--current
+      color: var(--color-dark)

@@ -1,0 +1,104 @@
+.catalog-filters
+  width: 309px
+  padding-top: 27px
+  padding-right: 66px
+  .hide-filters
+    padding-left: 23px
+    margin-bottom: 18px
+    font-size: 10px
+    font-weight: 700
+    background-image: url('./img/kz-close.png')
+    background-position: left center
+    background-repeat: no-repeat    
+.catalog-filter
+  border-top: 1px solid #eeeeee
+  &__top
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-top: 34px
+    padding-bottom: 34px
+  &__caption
+    display: flex
+    align-items: center
+  &__title
+    display: inline-block
+    font-weight: 700
+    font-size: 13px
+    text-transform: uppercase
+  &__quantity
+    margin-left: 5px
+  &__bottom
+    padding-bottom: 34px
+    display: none
+  &--open
+    display: block
+    .catalog-filter__bottom
+      display: block
+    .catalog-filter__toggle
+      &::before
+        display: none
+  &__toggle
+    width: 12px
+    height: 13px
+    position: relative
+    &::before
+      content: ""
+      left: 50%
+      top: 0
+      position: absolute
+      transform: translateX(-50%)
+      width: 2px
+      height: 100%
+      background-color: #858585
+    &::after
+      content: ""
+      left: 0
+      top: 50%
+      position: absolute
+      transform: translateY(-50%)
+      width: 100%
+      height: 2px
+      background-color: #858585
+    
+  &__items
+    columns: 2
+  &__item
+    margin-bottom: 14px
+    &:nth-child(5n)
+      margin: 0
+  &:last-child
+    border-bottom: 1px solid #aaa
+.custom-checkbox
+  display: inline-block
+  cursor: pointer
+  user-select: none
+  &__text
+    position: relative
+    color: #858585
+    font-size: 13px
+
+    &::before
+      content: ""
+      position: absolute
+      left: -15px
+      top: 4px
+      width: 11px
+      height: 11px
+      border: 2px solid #aaa
+    &::after
+      content: "\2713"
+      position: absolute
+      left: -13px
+      top: 4px
+      font-weight: 900
+      font-size: 9px
+      color: #aaa
+  &__input
+    &:checked + span
+      color:  var(--color-dark)
+      &::before
+        border-color: var(--color-dark)
+      &::after
+        color: var(--color-dark)
+

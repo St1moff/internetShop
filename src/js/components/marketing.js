@@ -1,4 +1,3 @@
-import '../_vars';
 import vars from '../_vars';
 
 
@@ -48,22 +47,11 @@ const changeMarketingData = () => {
 setInterval(changeMarketingData, delay);
 
 
-/// Close Marleting
-const closeMarketing = () => {
-  vars.$marketing.classList.remove('marketing--visible');
-}
-
-vars.$marketing.addEventListener('click', (e) => {
-  if (e.target.classList.contains('marketing__close')) {
-    closeMarketing();
-  }
-});
+/// Close Marketing
 
 
 
 
-// function showMarkeing(){
-//   vars.$marketing.classList.add('marketing--visible');
-// }
-// setTimeout(showMarkeing, 1000)
+
+
 

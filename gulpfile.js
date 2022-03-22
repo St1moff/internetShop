@@ -101,7 +101,7 @@ const fontsStyle = (done) => {
 
 
 function pug() {
-    return src('src/index.pug')
+    return src('src/*.pug')
     .pipe(include({
       prefix: '@@'
     }))
@@ -110,7 +110,7 @@ function pug() {
 }
 
 function html() {
-    return src('src/**.html')
+    return src('src/*.html')
       .pipe(include({
         prefix: '@@'
       }))
@@ -221,10 +221,10 @@ function serve() {
   watch('src/img/**.jpeg', series(imgToApp)).on('change', sync.reload)
   watch('src/img/svg/**.svg', series(svgSprites)).on('change', sync.reload)
   watch('src/resources/**', series(resources)).on('change', sync.reload)
-  watch('src/**.pug', series(pug)).on('change', sync.reload)
-  watch('src/parts/**.html', series(pug)).on('change', sync.reload)
+  watch('src/*.pug', series(pug)).on('change', sync.reload)
+  watch('src/parts/*.html', series(pug)).on('change', sync.reload)
   watch('src/sass/components/**.sass', series(sass)).on('change', sync.reload)
-  watch('src/parts/**.pug', series(pug)).on('change', sync.reload)
+  watch('src/parts/*.pug', series(pug)).on('change', sync.reload)
   watch('src/**.html', series(html)).on('change', sync.reload)
   watch('src/sass/**.sass', series(sass)).on('change', sync.reload)
   watch('src/js/**/*.js', series(scripts)).on('change', sync.reload)
@@ -286,7 +286,7 @@ function scriptsBuild () {
 
 
 
-exports.build = series(clear, parallel(pug, scriptsBuild, fonts, resources, imgToApp, svgSprites), fontsStyle, sassBuild);
+exports.build = series(clear, parallel(pug, scriptsBuild, fonts, resources, imgToApp, svgSprites, vendorJS, vendorCSS), fontsStyle, sassBuild);
 
 
 
