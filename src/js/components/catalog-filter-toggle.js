@@ -85,3 +85,4 @@ vars.$catalogChoice.addEventListener('click', (e) => {
 
 }) 
 
+

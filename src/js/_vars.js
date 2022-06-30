@@ -8,4 +8,6 @@ export default {
   $catalogGridContent: document.querySelector('.catalog-grid__content'),
   $catalogFilterItems: document.querySelectorAll('.catalog-filter__item'),
   $catalogChoice: document.querySelector('.catalog-choice'),
+  $customSelect: document.querySelectorAll('.custom-select'),
+  $freeDeliveryBtn: document.querySelector('.free-delivery__btn'),
 } 

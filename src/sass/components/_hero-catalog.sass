@@ -1,9 +1,35 @@
+.free-delivery
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 40px
+  color: var(--color-white)
+  background-color: var(--color-dark)
+  font-size: 10px
+  font-weight: 400
+  text-transform: uppercase
+  &__btn
+    position: absolute
+    right: 40px
+    cursor: pointer
+    width: 18px
+    height: 18px
+    svg
+      fill: var(--color-white)
+      width: 18px
+      height: 18px
+
 .hero-catalog
-  padding-top: 130px
+  &__container
+    padding-top: 90px
   &__slider
     overflow: hidden
     background-color: #f8f8f8
     width: 100% 
+    position: relative
+  &__container
+    position: relative
 .catalog-slide
   padding: 106px 
   &__title
@@ -34,4 +60,39 @@
       background-color: transparent
     &:not(:last-child)
       margin-right: 12px
+  &__image
+    position: absolute
+    right: 18.6%
+    bottom: 0
 
+.hero-prev-btn, .hero-next-btn 
+  z-index: 20
+  position: absolute
+  left: 26px
+  top: 45%
+  width: 48px
+  height: 48px
+  border: 2px solid var(--color-dark)
+  display: flex
+  align-items: center
+  justify-content: center
+  color: var(--color-dark)
+  transition: 0.3s
+
+  svg
+    width: 40px
+    height: 20px
+    fill: var(--color-dark)
+  &:hover
+    background-color: var(--color-dark)
+    svg
+      fill: var(--color-white)
+      
+.hero-prev-btn
+  transform: rotate(180deg)
+
+.hero-next-btn 
+  left: auto
+  right: 26px
+
+    

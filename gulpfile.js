@@ -101,23 +101,24 @@ const fontsStyle = (done) => {
 
 
 function pug() {
-    return src('src/*.pug')
+  return src('src/*.pug')
+  .pipe(include({
+    prefix: '@@'
+  }))
+  .pipe(Pug())
+  .pipe(dest('app'))
+}
+
+
+function html() {
+  return src('src/*.html')
     .pipe(include({
       prefix: '@@'
     }))
-    .pipe(Pug())
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(dest('app'))
-}
-
-function html() {
-    return src('src/*.html')
-      .pipe(include({
-        prefix: '@@'
-      }))
-      .pipe(htmlmin({
-        collapseWhitespace: true
-      }))
-      .pipe(dest('app'))
 }  
 
 async function sass() {

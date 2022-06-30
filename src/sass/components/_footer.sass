@@ -6,9 +6,13 @@
     display: flex
     justify-content: space-between
     padding-bottom: 95px
+    
   &__column
     &:nth-child(2)
       margin-left: -40px
+    &--flex
+      display: flex
+      align-items: center
   &__title
     font-size: 16px
     font-weight: 700
@@ -19,6 +23,18 @@
       margin-bottom: 18px
       &:not(:last-child)
         margin-right: 43px
+  &__select
+    display: flex
+    align-items: center
+    margin-left: 60px
+    .custom-select
+      margin-top: 0
+    &--caption
+      color: #858585
+      font-size: 13px
+      margin-right: 14px
+  &__copy
+    font-size: 13px
   &__list
     &--row
       display: flex
@@ -98,4 +114,16 @@
       background-image: url("../img/instagram.png")
     &--pin
       background-image: url("../img/pinterest.png")
+.footer-catalog
+  &__column:nth-child(2)
+    margin-left: 170px
+  &__top
+    padding-top: 43px
+    border-top: 1px solid #eeeeee
+    padding-bottom: 0
+  &__bottom
+    border-top: none
+    padding-top: 60px
+    padding-bottom: 20px
+
 

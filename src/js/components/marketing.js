@@ -39,6 +39,15 @@ const changeMarketingData = () => {
   if (counter === marketingData.length) {
     counter = 0;
   };
+  const closeMarketing = () => {
+    document.querySelector('.marketing').classList.remove('marketing--visible');
+  }
+
+  document.querySelector('.marketing').addEventListener('click', (e) => {
+    if (e.target.classList.contains('marketing__close')) {
+      closeMarketing();
+    }
+  });
 
 };
 

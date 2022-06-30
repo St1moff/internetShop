@@ -7,18 +7,18 @@ html(lang="en")
     link(rel="stylesheet" href="index.css")
     link(rel="stylesheet" type="text/css" href="./vendorFiles/swiper-bundle.min.css")
     title Zonex
-  body
+  body.card-page
 .site-container
-@@include('parts/free-delivery-catalog.pug')
 @@include('parts/header-catalog.pug')
-  main.main.container.container-narrow
-@@include('parts/hero-catalog.pug')
-    section.catalog
-      h2.visually-hidden Catalog
-@@include('parts/breadcrumbs.pug')
-      .catalog-contnet
-@@include('parts/catalog-filter.pug')
-@@include('parts/catalog-grid.pug')
+  main.main.container.container-narrow.card-main
+    section.card
+      h2.visually-hidden Product card
+      .card__props 
+@@include('parts/breadcrumbs-card.pug')
+@@include('parts/prev-next.pug')
+      .card-content
+        .card-content__top
+@@include('parts/card-top.pug')
 
 
 

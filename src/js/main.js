@@ -4,17 +4,15 @@ import './components/marketing.js'
 import './components/catalog-slider.js'
 import './components/catalog-filter-toggle.js'
 import './components/catalog-props.js'
+import vars from './_vars'
 
 
-const closeMarketing = () => {
-  document.querySelector('.marketing').classList.remove('marketing--visible');
-}
 
-document.querySelector('.marketing').addEventListener('click', (e) => {
-  if (e.target.classList.contains('marketing__close')) {
-    closeMarketing();
-  }
-});
+
+vars.$freeDeliveryBtn.addEventListener('click', (e) => {
+
+  e.currentTarget.closest('.free-delivery').style.visibility = "hidden";
+})
 
 
 
