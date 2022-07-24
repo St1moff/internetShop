@@ -1,6 +1,110 @@
           .card-top 
-            .container.container-narrow
+            .container-narrow
               .card-top__left 
                 .card-slider
                   .card-slider__thumbs
+                    .card-slider__thumb
+                      img(src="img/1.png", alt="")
+                    .card-slider__thumb
+                      img(src="img/1.png", alt="")
+                    .card-slider__thumb
+                      img(src="img/1.png", alt="")
+                    .card-slider__thumb
+                      img(src="img/1.png", alt="")
+                    .card-slider__thumb
+                      img(src="img/1.png", alt="")
+                  .card-slider__main 
+                    img(src="img/card-woman.png", alt="")
               .card-top__right 
+                .card-info 
+                  p.card-info__prop.product-prop.best-seller Best Seller 
+                  h3.card-info__title Band-collar popover tunic
+                  .card-info__rate
+                    img(src="img/rate.png", alt="Rate 4 of 5")
+                    span 2 Reviews
+                  .card-info__price.info-price 
+                    .info-price__current $128.00 
+                    .info-price__old $165.00 
+                  p.card-info__descr We love the dramatic ruffle details down the sleeve, delicate fabric buttons and polished cuffs.
+                  .card-info__select.color-select
+                    p.color-select__selected Color: 
+                      span Green 
+                    ul.color-select__list
+                      li.color-select__item
+                        button.color-select__btn.btn-reset(aria-label="red color" data-color="red" style="background-color: red;") 
+                      li.color-select__item
+                        button.color-select__btn.btn-reset(aria-label="orange color" data-color="orange" style="background-color: orange;") 
+                      li.color-select__item
+                        button.color-select__btn.btn-reset.color-select__btn--active(aria-label="green color" data-color="green" style="background-color: green;") 
+                      li.color-select__item
+                        button.color-select__btn.btn-reset(aria-label="white color" data-color="white" style="background-color: white;") 
+                      li.color-select__item
+                        button.color-select__btn.btn-reset(aria-label="black color" data-color="black" style="background-color: black;")
+                      li.color-select__item
+                        button.color-select__btn.btn-reset(aria-label="brown color" data-color="brown" style="background-color: brown;") 
+                      li.color-select__item
+                        button.color-select__btn.btn-reset(aria-label="purple color" data-color="purple" style="background-color: purple;") 
+                      li.color-select__item
+                        button.color-select__btn.btn-reset(aria-label="grey color" data-color="grey" style="background-color: grey;") 
+                  .card-info__select.size-select
+                    p.size-select__selected size: 
+                      span Select a size
+                    ul.size-select__list
+                      li.size-select__item
+                        button.size-select__btn.btn-reset(aria-label="23") 23
+                      li.size-select__item
+                        button.size-select__btn.btn-reset(aria-label="24") 24
+                      li.size-select__item
+                        button.size-select__btn.btn-reset(aria-label="25") 25
+                      li.size-select__item
+                        button.size-select__btn.btn-reset(aria-label="26") 26
+                      li.size-select__item
+                        button.size-select__btn.btn-reset(aria-label="27") 27
+                      li.size-select__item
+                        button.size-select__btn.btn-reset(aria-label="28") 28
+                      li.size-select__item
+                        button.size-select__btn.btn-reset(aria-label="29") 29
+                      li.size-select__item
+                        button.size-select__btn.btn-reset(aria-label="30") 30
+                      li.size-select__item
+                        button.size-select__btn.btn-reset(aria-label="31") 31
+                      
+                    button(class="btn-reset size-select__clear") 
+                      svg
+                        use(xlink:href='img/sprite.svg#close')
+                      span Clear
+                  .card-info__stepper.stepper 
+                    button.btn-reset.stepper__btn.stepper__btn--minus.stepper__btn--disabled(aria-label="minus")
+                      svg(width="16" )
+                        use(xlink:href='img/sprite.svg#minus')
+                    input.stepper__input(value="1" type="text" maxlength="4" )
+                    button.btn-reset.stepper__btn.stepper__btn--plus(aria-label="plus")
+                      svg(width="16")
+                        use(xlink:href='img/sprite.svg#plus')
+                  button.btn-reset.card-info__btn.card-info__btn--tocart Add to cart
+                  button.btn-reset.card-info__btn.card-info__btn--towhishlist Add to whishlist
+                  .card-info__bottom.card-bottom 
+                    .card__bottom__item
+                      span  SKU:
+                      a(href="#")  FW511
+                    .card__bottom__item
+                      span  Category:
+                      a(href="#")  Trousers
+                      span ,
+                      a(href="#")  Life style
+                    .card__bottom__item
+                      span  Tags:
+                      a(href="#")  Designer
+                      span ,
+                      a(href="#")   Women
+                    .card-bottom__social
+                      span Share:
+                      ul.social   
+                        li.social__item
+                          a.social__link.social__link--tw(href="" aria-lable="Go to twitter") 
+                        li.social__item
+                          a.social__link.social__link--fb(href="" aria-lable="Go to facebook") 
+                        li.social__item
+                          a.social__link.social__link--in(href="" aria-lable="Go to instagram") 
+                        li.social__item
+                          a.social__link.social__link--pin(href="" aria-lable="Go to pinterest")

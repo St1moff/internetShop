@@ -19,6 +19,7 @@ const webpackStream = require('webpack-stream');
 const uglify = require('gulp-uglify-es').default;
 const gutil = require('gulp-util');
 const ftp = require('vinyl-ftp');
+const plumber = require('gulp-plumber');
 
 
 
@@ -160,28 +161,37 @@ function resources () {
 
 function scripts () {
 	return src('src/js/main.js')
+    .pipe(plumber(
+      notify.onError({
+        title: "JS",
+        message: "Error: <%= error.message %>"
+      })
+    ))
 		.pipe(webpackStream({
 			mode: 'development',
 			output: {
 				filename: 'main.js',
 			},
 			module: {
-				rules: [{
-					test: /\.m?js$/,
-					exclude: /(node_modules|bower_components)/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							presets: ['@babel/preset-env']
-						}
-					}
-				}]
-			},
-		}))
-		.on('error', function (err) {
-			console.error('WEBPACK ERROR', err);
-			this.emit('end'); // Don't stop the rest of the task
-		})
+        rules: [{
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', {
+                  targets: "defaults"
+                }]
+              ]
+            }
+          }}]
+        },
+      }))
+      .on('error', function (err) {
+        console.error('WEBPACK ERROR', err);
+        this.emit('end'); // Don't stop the rest of the task
+      })
 		.pipe(sourcemaps.init())
 		.pipe(uglify().on("error", notify.onError()))
 		.pipe(sourcemaps.write('.'))
@@ -251,7 +261,7 @@ async function sassBuild() {
         cascade: false,
         overrideBrowserslist: ['last 2 versions']
       }))
-      .pipe(csso())
+//      .pipe(csso())    // сжимает код
       .pipe(dest('app'))
   }, 0)
 } 
@@ -259,7 +269,7 @@ async function sassBuild() {
 function scriptsBuild () {
 	return src('src/js/main.js')
 		.pipe(webpackStream({
-			mode: 'development',
+			mode: 'production',
 			output: {
 				filename: 'main.js',
 			},
@@ -276,11 +286,11 @@ function scriptsBuild () {
 				}]
 			},
 		}))
-		.on('error', function (err) {
-			console.error('WEBPACK ERROR', err);
+		.on("error", function (err) {
+			console.log('WEBPACK ERROR', err);
 			this.emit('end'); // Don't stop the rest of the task
 		})
-		.pipe(uglify().on("error", notify.onError()))
+		.pipe(uglify().on("error", notify.onError())) //не дает прочитать код
 		.pipe(dest('app/js'))
 
 }

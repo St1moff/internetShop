@@ -10,4 +10,9 @@ export default {
   $catalogChoice: document.querySelector('.catalog-choice'),
   $customSelect: document.querySelectorAll('.custom-select'),
   $freeDeliveryBtn: document.querySelector('.free-delivery__btn'),
+  $colorSelect: document.querySelector('.color-select'),
+  $sizeSelect: document.querySelector('.size-select'),
+  $stepper: document.querySelector('.stepper'),
+  $cardSliderThumbs: document.querySelector('.card-slider__thumbs'),
+  $sliderImg: document.querySelector('.card-slider__main img'),
 } 

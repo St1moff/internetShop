@@ -1,2 +1,219 @@
 .card-main
   margin-top: 63px
+
+.card-content 
+  padding-top: 23px
+
+.card-top
+  .container-narrow
+    display: flex
+  
+  &__left
+    width: 57.5%
+  &__right
+    width: calc(100% - 57.5%)
+    padding-left: 10.7%
+    padding-top: 62px 
+
+.card-info
+  &__prop 
+    padding-left: 19px
+    margin-bottom: 16px
+  &__title
+    font-weight: 500
+    font-size: 24px
+    margin: 0
+    margin-bottom: 15px
+  &__rate
+    font-size: 13px
+    margin-bottom: 22px
+    color: var(--color-gray)
+    img
+      margin-right: 7px
+  &__price
+    margin-bottom: 22px
+  &__descr
+    color: var(--color-tundora)
+    font-size: 13px
+    line-height: 20px
+    margin-bottom: 52px
+  &__btn
+    width: 100%
+    height: 58px
+    background-color: #f2f2f2
+    font-weight: 700
+    text-transform: uppercase
+    color: var(--color-dark)
+    font-size: 10px
+    margin-bottom: 10px
+    transition: 0.3s
+    &:hover
+      background-color: var(--color-gray)
+      color: var(--color-dark)
+    &--tocart
+      background-color: var(--color-dark)
+      color: var(--color-white)
+      &:hover
+        background-color: var(--color-tundora)
+        color: var(--color-white)
+
+.info-price
+  display: flex
+  align-items: flex-end
+  &__current
+    font-weight: 700
+    font-size: 24px 
+    margin-right: 20px
+  &__old
+    color: #959595
+    font-size: 16px
+    text-decoration: line-through
+
+.color-select
+  margin-bottom: 33px
+  &__selected
+    margin-bottom: 14px
+    color: #858585
+    font-weight: 700
+    font-size: 10px
+    text-transform: uppercase     
+    span
+      color: var(--color-dark)
+      margin-left: 3px
+  &__list 
+    margin-left: 5.2px
+    display: flex
+    align-items: center 
+  &__item
+    &:not(:last-child)
+      margin-right: 13px
+  &__btn  
+    position: relative
+    width: 24px
+    height: 24px
+    border-radius: 100%
+    &::before
+      content: ""
+      position: absolute
+      left: 50%
+      top: 50%
+      border: 1px solid #ccc
+      width: 32px
+      height: 32px
+      transform: translate(-50%, -50%)
+      transition: border 0.3s
+      border-radius: 100%
+    &:hover
+      &::before
+        transition: border 0.3s
+        border: 1px solid var(--color-dark)
+    &--active
+      &::before
+        transition: border 0.3s
+        border: 1px solid var(--color-dark)
+.size-select
+  margin-bottom: 37px
+  height: 100px
+  &__selected
+    margin-bottom: 13px
+    color: #858585
+    font-weight: 700
+    font-size: 10px
+    text-transform: uppercase     
+    span
+      color: var(--color-dark)
+      margin-left: 3px
+  &__clear
+    display: none
+    color: #d24242
+    font-weight: 700
+    font-size: 10px
+    text-transform: uppercase
+    margin-top: 10px
+  svg
+    margin-right: 2px
+
+    width: 11px
+    height: 11px
+    fill: #d24242
+
+  &__list 
+    display: flex
+    align-items: center 
+  &__item
+    &:not(:last-child)
+      margin-right: 5px
+  &__btn  
+    position: relative
+    width: 42px
+    height: 32px
+    transition: 0.3s
+    color: #858585
+    font-size: 13px
+    
+
+    &::before
+      content: ""
+      position: absolute
+      left: 0
+      top: 0
+      border: 1px solid #ccc
+      width: 100%
+      height: 100%
+      transition: border 0.3s
+
+    &:hover
+      color: var(--color-dark)
+      &::before
+        transition: border 0.3s
+        border: 1px solid var(--color-dark)
+    &--active
+      color: var(--color-dark)
+      &::before
+        transition: border 0.3s
+        border: 1px solid var(--color-dark)
+.stepper
+  display: flex
+  height: 58px
+  border: 1px solid #ccc
+  margin-bottom: 10px
+  &__btn
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 44px
+    height: 100%
+    svg
+      fill: #858585
+      transition: 0.2s
+      &:hover
+        fill: var(--color-dark)
+        transition: 0.2s
+    &--disabled
+      pointer-events: none
+      opacity: 0.4
+  &__input
+    flex-grow: 1
+    text-align: center
+    border: none
+    height: 100%
+    color: var(--color-dark)
+    font-weight: 700
+    font-size: 13px
+.card-bottom
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  margin-top: 50px
+  font-size: 10px
+  font-weight: 700
+  text-transform: uppercase
+  span
+    color: #858585
+  &__social
+    display: flex
+    align-items: center
+    margin-top: 15px
+    span
+      margin-right: 12px
+  
