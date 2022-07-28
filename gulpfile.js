@@ -1,7 +1,7 @@
 const {src, dest, series, watch, parallel} = require('gulp')
 const Sass = require('gulp-sass')(require('sass'))
 const Pug = require('gulp-pug')
-const csso = require('gulp-csso')
+const cleanCSS = require('gulp-clean-css');
 const include = require('gulp-file-include')
 const htmlmin = require('gulp-htmlmin')
 const del = require('del')
@@ -122,19 +122,19 @@ function html() {
     .pipe(dest('app'))
 }  
 
-async function sass() {
-  return await setTimeout(() => {
-    src('src/sass/**.sass')
+function sass() {
+  return src('src/sass/**.sass')
       .pipe(sourcemaps.init())
       .pipe(Sass()).on('error', notify.onError())
       .pipe(autoprefixer({
         cascade: false,
         overrideBrowserslist: ['last 2 versions']
       }))
-      .pipe(csso())
+      .pipe(cleanCSS({
+      level: 2
+    }))
       .pipe(sourcemaps.write('.'))
       .pipe(dest('app'))
-  }, 0)
 } 
 
 function imgToApp() {
@@ -199,23 +199,25 @@ function scripts () {
 
 }
 function vendorJS() {
-  const modules = [
-    'node_modules/swiper/swiper-bundle.min.js',
-    'node_modules/swiper/swiper-bundle.min.js.map',
-  ];
+  // const modules = [
+  //   'node_modules/swiper/swiper-bundle.min.js',
+  //   'node_modules/swiper/swiper-bundle.min.js.map',
+  // ];
 
-  return src(modules)
+  //return src(modules)
+    return src('src/js/vendor/**')
     .pipe(dest('app/vendorFiles'));
 };
 
 function vendorCSS() {
-  const modules = [
-    'node_modules/swiper/swiper-bundle.min.css',
-  ];
+  // const modules = [
+  //   'node_modules/swiper/swiper-bundle.min.css',
+  // ];
 
-  return src(modules)
+  // return src(modules)
+  return src('src/sass/vendor/**')
     .pipe(dest('app/vendorFiles'));
-};
+  };
 function clear() {
   return del('app')
 }
@@ -248,52 +250,64 @@ exports.sass = sass
 exports.html = html
 exports.scripts = scripts
 exports.serve = series(clear, parallel(pug, scripts, fonts, resources, imgToApp, svgSprites, vendorJS, vendorCSS), fontsStyle, sass, serve);
+
 exports.clear = clear
 
 
 
 //Build
-async function sassBuild() {
-  return await setTimeout(() => {
-    src('src/sass/**.sass')
-      .pipe(Sass()).on('error', notify.onError())
-      .pipe(autoprefixer({
-        cascade: false,
-        overrideBrowserslist: ['last 2 versions']
-      }))
-//      .pipe(csso())    // сжимает код
-      .pipe(dest('app'))
-  }, 0)
-} 
-
-function scriptsBuild () {
-	return src('src/js/main.js')
-		.pipe(webpackStream({
-			mode: 'production',
-			output: {
-				filename: 'main.js',
-			},
-			module: {
-				rules: [{
-					test: /\.m?js$/,
-					exclude: /(node_modules|bower_components)/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							presets: ['@babel/preset-env']
-						}
-					}
-				}]
-			},
-		}))
-		.on("error", function (err) {
-			console.log('WEBPACK ERROR', err);
-			this.emit('end'); // Don't stop the rest of the task
-		})
-		.pipe(uglify().on("error", notify.onError())) //не дает прочитать код
-		.pipe(dest('app/js'))
-
+function sassBuild() {
+  return src('src/sass/**.sass')
+    .pipe(sourcemaps.init())
+    .pipe(Sass()).on('error', notify.onError())
+    .pipe(autoprefixer({
+      cascade: false,
+      overrideBrowserslist: ['last 2 versions']
+    }))
+    .pipe(cleanCSS({
+      level: 2
+    }))
+    .pipe(dest('app'))
 }
+
+  function scriptsBuild() {
+    return src('src/js/main.js')
+      .pipe(plumber(
+        notify.onError({
+          title: "JS",
+          message: "Error: <%= error.message %>"
+        })
+      ))
+      .pipe(webpackStream({
+        mode: 'production',
+        output: {
+          filename: 'main.js',
+        },
+        module: {
+          rules: [{
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: [
+                  ['@babel/preset-env', {
+                    targets: "defaults"
+                  }]
+                ]
+              }
+            }
+          }]
+        },
+      }))
+      .on('error', function (err) {
+        console.error('WEBPACK ERROR', err);
+        this.emit('end'); // Don't stop the rest of the task
+      })
+      .pipe(uglify().on("error", notify.onError()))
+      .pipe(dest('app/js'))
+
+  }
 
 
 

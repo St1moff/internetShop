@@ -19,10 +19,21 @@
     align-items: center
     color:#858585
     font-size: 13px
+    transition-property: all
+    transition-duration: 0.3s
+    transition-delay: 0s
+    transition-timing-function: cubic-bezier(0.68,-0.55,0.265,1.55)
     svg
       margin-top: 14px
       width: 12px
       height: 21px
+      transition-property: all
+      transition-duration: 0.3s
+      transition-delay: 0s
+      transition-timing-function: cubic-bezier(0.68,-0.55,0.265,1.55)
+    &:hover
+      svg
+        transform: translateY(100%)
 
 
 
@@ -34,3 +45,5 @@
   display: flex
   flex-wrap: wrap
   justify-content: space-between
+  &__item
+    padding-bottom: 60px

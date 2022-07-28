@@ -8,22 +8,22 @@ html(lang="en")
     link(rel="stylesheet" type="text/css" href="./vendorFiles/swiper-bundle.min.css")
     title Zonex
   body
-.site-container
+    .site-container
 @@include('parts/free-delivery-catalog.pug')
 @@include('parts/header-catalog.pug')
-  main.main.container.container-narrow
+      main.main.container.container-narrow
 @@include('parts/hero-catalog.pug')
-    section.catalog
-      h2.visually-hidden Catalog
+        section.catalog
+          h2.visually-hidden Catalog
 @@include('parts/breadcrumbs.pug')
-      .catalog-contnet
+          .catalog-contnet
 @@include('parts/catalog-filter.pug')
 @@include('parts/catalog-grid.pug')
 
-
-
-
 @@include('parts/footer-catalog.pug')
+    a.to-top(href="#") 
+      svg
+        use(xlink:href='img/sprite.svg#to-top')
 
 script(src='./vendorFiles/swiper-bundle.min.js')
 script(src="js/main.js") 

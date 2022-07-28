@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Eye Mesh Boat Shoes",
+    "price": "$220.00",
+    "image":  "./img/product1.png"
+  },
+  {
+    "title": "Azure Tote",
+    "price": "$290.00",
+    "image":  "./img/product2.png"
+  },
+  {
+    "title": "Blue Raincoat",
+    "price": "$150.00",
+    "image":  "./img/product3.png"
+  },
+  {
+    "title": "Backpack with contrasting buckle",
+    "price": "$90.00",
+    "image":  "./img/product4.png"
+  },
+  {
+    "title": "Shirt in organic cotton classic gingham",
+    "price": "$80.00 - $125.00",
+    "image":  "./img/product5.png"
+  },
+  {
+    "title": "Eye Mesh Boat Shoes",
+    "price": "220.00",
+    "image":  "./img/product6.png"
+  },
+  {
+    "title": "Tailored indigo jumpsuit",
+    "price": "$59.50",
+    "image":  "./img/product7.png"
+  },
+  {
+    "title": "Eye Mesh Boat Shoes",
+    "price": "220.00",
+    "image":  "./img/product8.png"
+  },
+  {
+    "title": "Triple stone drop earrings",
+    "price": "$128.00",
+    "image":  "./img/product9.png"
+  },
+  {
+    "title": "Azure Tote",
+    "price": "220.00",
+    "image":  "./img/product10.png"
+  }
+]

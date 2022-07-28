@@ -21,7 +21,9 @@ if(document.querySelector('.catalog')){
       let checked = el.querySelector('input').checked;
       if (checked) {
         el.querySelector('.custom-checkbox').classList.add('custom-checkbox--active');
+
         let text = el.querySelector('.custom-checkbox__text').textContent;
+        
 
         vars.$catalogChoice.insertAdjacentHTML('afterbegin',
           `
@@ -40,11 +42,9 @@ if(document.querySelector('.catalog')){
           if (e.textContent.trimLeft().trimRight() === el.querySelector('.custom-checkbox').dataset.text) {
             e.remove()
           }
-
-
         })
       }
-
+      el.closest('.catalog-filter').querySelector('.catalog-filter__quantity').textContent = el.closest('.catalog-filter__items').querySelectorAll('.custom-checkbox--active').length
       let activeCheckboxes = document.querySelectorAll('.custom-checkbox--active')
 
       if (activeCheckboxes.length > 0) {
@@ -58,6 +58,8 @@ if(document.querySelector('.catalog')){
   vars.$catalogChoice.addEventListener('click', (e) => {
     if (e.target.classList.contains('catalog-choice__item')) {
       e.target.remove();
+      el.closest('.catalog-filter').querySelector('.catalog-filter__quantity').textContent = el.closest('.catalog-filter__items').querySelectorAll('.custom-checkbox--active').length
+
 
       let text = e.target.textContent.trimLeft().trimRight();
 
@@ -70,6 +72,9 @@ if(document.querySelector('.catalog')){
         if (!el.classList.contains('catalog-choice__clear')) {
           el.remove();
         }
+
+        document.querySelectorAll('.catalog-filter__quantity').forEach(el => el.textContent = '0')
+
         vars.$catalogFilterItems.forEach(elem => {
           elem.querySelector('input').checked = false;
           elem.querySelector('.custom-checkbox').classList.remove('custom-checkbox--active');
@@ -85,6 +90,8 @@ if(document.querySelector('.catalog')){
 
   })
 };
+
+
 
 
 

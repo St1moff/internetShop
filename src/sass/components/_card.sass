@@ -3,7 +3,8 @@
 
 .card-content 
   padding-top: 23px
-
+  &__bottom
+    padding-top: 95px
 .card-top
   .container-narrow
     display: flex
@@ -216,4 +217,93 @@
     margin-top: 15px
     span
       margin-right: 12px
-  
+
+.card-description
+  display: flex
+  height: 300px
+  .simplebar-track.simplebar-vertical
+    transform: translate3d(0px, -2px, 0px)
+    width: 3px
+    background-color: #ccc
+    height: 100%
+
+  .simplebar-scrollbar
+    &::before
+      opacity: 1
+      width: 3px
+      background-color: var(--color-dark)
+      border-radius: 0
+      left: 0
+      right: 0
+      height: 100%
+
+
+
+  &__left
+    width: 16%
+  &__right
+    width: 84%
+    padding-left: 124px
+    padding-right: 110px
+  &__navigation
+    padding: 32px 0
+    width: 100%
+    max-height: 200px
+  &__item
+    &:not(:last-child)
+      margin-bottom: 50px
+  &__link
+    color: #858585
+    font-size: 15px
+    font-weight: 700
+    &--active
+      color: var(--color-dark)
+      pointer-events: none
+  &__content
+    display: none
+    &--active
+      display: block
+    p
+      margin-bottom: 29px
+      font-weight: 500
+      font-size: 13px
+      line-height: 26px
+
+.card-related
+  padding-top: 25px
+  padding-bottom: 100px
+  &__title
+    font-size: 24px
+    font-weight: 500
+    line-height: 26px
+    padding-bottom: 40px
+
+  &__slider
+    overflow: hidden
+.related-pag
+  position: relative !important
+  text-align: left !important
+  padding-top: 87px
+
+  .swiper-pagination-bullet
+    margin: 0 12px !important
+    width: 6px
+    height: 6px
+    opacity: 0.5
+    background-color: #cccccc
+
+  .swiper-pagination-bullet-active
+    position: relative
+    opacity: 1
+    background-color: var(--color-dark)
+    &::before
+      content: ""      
+      position: absolute
+      border-radius: 100%
+      width: 17px
+      height: 17px    
+      background-color: #eeeeee 
+      transform: translate(-50%,-50%) 
+      left: 50%
+      top: 50% 
+      z-index: -1  

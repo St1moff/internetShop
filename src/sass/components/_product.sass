@@ -2,12 +2,15 @@
   position: relative
 
   &__image
+    overflow: hidden
     img
       object-fit: cover
       max-height: 100%
       margin-bottom: 18px
+      transition: 0.3s
   &__sale
     position: absolute
+    z-index: 20
     left: 20px  
     top: 20px
     border: 2px solid var(--color-dark)
@@ -25,6 +28,16 @@
     padding-left: 16px
     background-position: left center
     background-repeat: no-repeat
+  &:hover
+    .product__image
+      img
+        transform: scale(1.1)
+        transition: 0.3s
+
+    .product-custom__price
+      transform: translateY(-100%)
+    .product-custom__cart
+      transform: translateY(-100%)
   &__title
     color: var(--color-tundora)
     font-size: 13px
@@ -67,3 +80,27 @@
   padding-left: 16px
   background-position: left center
   background-repeat: no-repeat
+
+.product-custom
+  height: 18px
+  overflow: hidden
+  &__price
+    transition: 0.3s
+  &__cart
+    display: flex
+    transition: 0.3s
+    justify-content: space-between
+    img
+      float: right
+      display: block
+
+      background-position: center
+      background-repeat: no-repeat
+      padding-left: 12px 
+      
+.to-cart
+  text-transform: uppercase
+  font-weight: 700
+  font-size: 12px
+  
+  

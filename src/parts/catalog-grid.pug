@@ -1,128 +1,213 @@
-        .catalog-grid 
-          .catalog-grid__props.catalog-props 
-            .catalog-props__top 
-              .catalog-props__columns.catalog-columns
-                span.catalog-columns__text Column number: 
-                ul.catalog-columns__list
-                  li.catalog-columns__item
-                    button.btn-reset.catalog-columns__btn.main-link(data-columns="3") 3
-                  li.catalog-columns__item
-                    button.btn-reset.catalog-columns__btn.catalog-columns__btn--current.main-link(data-columns="4") 4
-                  li.catalog-columns__item
-                    button.btn-reset.catalog-columns__btn.main-link(data-columns="5") 5
-              .custom-select 
-                .custom-select__top SORT BY LATEST
-                .custom-select__dropdown 
-                  ul.custom-select__list
-                    li.custom-select__item SORT BY LATEST
-                    li.custom-select__item SORT BY PRICE
-                    li.custom-select__item SORT BY VIEWS
-            .catalog-props__choice.catalog-choice
-              button.btn-reset.catalog-choice__clear Clear all
-          ul.catalog-grid__content(data-grid-columns="4")
-            li.catalog-grid__item
-              article.product 
-                .product__image
-                  img(src="./img/product1.png", alt="prod 1")
-                span.product__prop.product-prop.new New
-                h3.product__title 
-                  a(href="#") Eye Mesh Boat Shoes
-                span.product__price $220.00
-            li.catalog-grid__item
-              article.product 
-                .product__image
-                  img(src="./img/product2.png", alt="prod 2")
-                h3.product__title 
-                  a(href="#") Azure Tote
-                span.product__price $290.00
-            li.catalog-grid__item
-              article.product 
-                .product__image
-                  img(src="./img/product3.png", alt="prod 3")
-                h3.product__title 
-                  a(href="#") Blue Raincoat
-                span.product__price $150.00
-            li.catalog-grid__item
-              article.product 
-                .product__image
-                  img(src="./img/product4.png", alt="prod 4")
-                span.product__prop.product-prop.best-seller best seller
-                h3.product__title 
-                  a(href="#") Backpack with contrasting buckle
-                span.product__price $90.00 - $125.00
-            li.catalog-grid__item
-              article.product 
-                .product__image
-                  span.product__sale SALE
-                  img(src="./img/product5.png", alt="prod 5")
-                span.product__prop.product-prop.best-seller best seller
-                h3.product__title 
-                  a(href="#") Shirt in organic cotton classic gingham
-                span.product__price $80.00
-            li.catalog-grid__item
-              article.product 
-                .product__image
-                  img(src="./img/product6.png", alt="prod 6")
-                span.product__prop.product-prop.hot hot
-                h3.product__title 
-                  a(href="#") Tailored indigo jumpsuit
-                span.product__price $59.50
-                span.product__old-price $131
-            li.catalog-grid__item
-              article.product 
-                .product__image
-                  img(src="./img/product7.png", alt="prod 7")
-                span.product__prop.product-prop.top-rate top rate
-                h3.product__title 
-                  a(href="#") Triple stone drop earrings
-                span.product__price $128.00
-            li.catalog-grid__item
-              article.product 
-                .product__image
-                  img(src="./img/product8.png", alt="prod 8")
-                span.product__prop.product-prop.few-left only a few left
-                h3.product__title 
-                  a(href="#") Backpack with contrasting buckle
-                span.product__price $49.50
-            li.catalog-grid__item
-              article.product                                       
-                .product__image
-                  img(src="./img/product9.png", alt="prod 9")
-                span.product__prop.product-prop.hot hot
-                h3.product__title 
-                  a(href="#") Eye Mesh Boat Shoes
-                span.product__price $158.00
-            li.catalog-grid__item
-              article.product 
-                .product__image
-                  img(src="./img/product10.png", alt="prod 10")
-                span.product__prop.product-prop.hot hot
-                h3.product__title 
-                  a(href="#") Azure Tote
-                span.product__price $290.00
-            li.catalog-grid__item
-              article.product 
-                .product__image
-                  img(src="./img/product10.png", alt="prod 10")
-                span.product__prop.product-prop.top-rate top rate
-                h3.product__title 
-                  a(href="#") Azure Tote
-                span.product__price $290.00
-            li.catalog-grid__item
-              article.product 
-                .product__image
-                  img(src="./img/product10.png", alt="prod 10")
-                h3.product__title 
-                  a(href="#") Azure Tote
-                span.product__price $290.00
-          ul.pagination 
-            li.pagination__item
-              a.pagination__link.pagination__link--current(href="#") 1
-            li.pagination__item
-              a.pagination__link(href="#") 2
-            li.pagination__item
-              a.pagination__link(href="#") 3 
-            li.pagination__item
-              a.pagination__link(href="#") NEXT
-                svg
-                  use(xlink:href='img/sprite.svg#angle-right')
+            .catalog-grid 
+              .catalog-grid__props.catalog-props 
+                .catalog-props__top 
+                  .catalog-props__columns.catalog-columns
+                    span.catalog-columns__text Column number: 
+                    ul.catalog-columns__list
+                      li.catalog-columns__item
+                        button.btn-reset.catalog-columns__btn.main-link(data-columns="3") 3
+                      li.catalog-columns__item
+                        button.btn-reset.catalog-columns__btn.catalog-columns__btn--current.main-link(data-columns="4") 4
+                      li.catalog-columns__item
+                        button.btn-reset.catalog-columns__btn.main-link(data-columns="5") 5
+                  .custom-select 
+                    .custom-select__top SORT BY LATEST
+                    .custom-select__dropdown 
+                      ul.custom-select__list
+                        li.custom-select__item SORT BY LATEST
+                        li.custom-select__item SORT BY PRICE
+                        li.custom-select__item SORT BY VIEWS
+                .catalog-props__choice.catalog-choice
+                  button.btn-reset.catalog-choice__clear Clear all
+              ul.catalog-grid__content(data-grid-columns="4")
+                li.catalog-grid__item
+                  article.product 
+                    .product__image
+                      img(src="./img/product1.png", alt="prod 1")
+                    span.product__prop.product-prop.new New
+                    h3.product__title 
+                      a(href="#") Eye Mesh Boat Shoes
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $220.00
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                li.catalog-grid__item
+                  article.product 
+                    .product__image
+                      img(src="./img/product2.png", alt="prod 2")
+                    h3.product__title 
+                      a(href="#") Azure Tote
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $290.00
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                li.catalog-grid__item
+                  article.product 
+                    .product__image
+                      img(src="./img/product3.png", alt="prod 3")
+                    h3.product__title 
+                      a(href="#") Blue Raincoat
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $150.00
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                li.catalog-grid__item
+                  article.product 
+                    .product__image
+                      img(src="./img/product4.png", alt="prod 4")
+                    span.product__prop.product-prop.best-seller best seller
+                    h3.product__title 
+                      a(href="#") Backpack with contrasting buckle
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $90.00 - $125.00
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                li.catalog-grid__item
+                  article.product 
+                    .product__image
+                      span.product__sale SALE
+                      img(src="./img/product5.png", alt="prod 5")
+                    span.product__prop.product-prop.best-seller best seller
+                    h3.product__title 
+                      a(href="#") Shirt in organic cotton classic gingham
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $80.00
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                li.catalog-grid__item
+                  article.product 
+                    .product__image
+                      img(src="./img/product6.png", alt="prod 6")
+                    span.product__prop.product-prop.hot hot
+                    h3.product__title 
+                      a(href="#") Tailored indigo jumpsuit
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $59.50
+                        span.product__old-price $131
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                li.catalog-grid__item
+                  article.product 
+                    .product__image
+                      img(src="./img/product7.png", alt="prod 7")
+                    span.product__prop.product-prop.top-rate top rate
+                    h3.product__title 
+                      a(href="#") Triple stone drop earrings
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $128.00
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                li.catalog-grid__item
+                  article.product 
+                    .product__image
+                      img(src="./img/product8.png", alt="prod 8")
+                    span.product__prop.product-prop.few-left only a few left
+                    h3.product__title 
+                      a(href="#") Backpack with contrasting buckle
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $49.50
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                li.catalog-grid__item
+                  article.product                                       
+                    .product__image
+                      img(src="./img/product9.png", alt="prod 9")
+                    span.product__prop.product-prop.hot hot
+                    h3.product__title 
+                      a(href="#") Eye Mesh Boat Shoes
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $158.00
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                li.catalog-grid__item
+                  article.product 
+                    .product__image
+                      img(src="./img/product10.png", alt="prod 10")
+                    span.product__prop.product-prop.hot hot
+                    h3.product__title 
+                      a(href="#") Azure Tote
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $290.00
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                li.catalog-grid__item
+                  article.product 
+                    .product__image
+                      img(src="./img/product10.png", alt="prod 10")
+                    span.product__prop.product-prop.top-rate top rate
+                    h3.product__title 
+                      a(href="#") Azure Tote
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $290.00
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                li.catalog-grid__item
+                  article.product 
+                    .product__image
+                      img(src="./img/product10.png", alt="prod 10")
+                    h3.product__title 
+                      a(href="#") Azure Tote
+                    .product-custom
+                      .product-custom__price
+                        span.product__price $290.00
+                      .product-custom__cart 
+                        span.to-cart Add to cart
+                        .product-custom__links
+                          img(src="./img/search.png", alt="Search")
+                          img(src="./img/like.png", alt="like")
+                
+              ul.pagination 
+                li.pagination__item
+                  a.pagination__link.pagination__link--current(href="#") 1
+                li.pagination__item
+                  a.pagination__link(href="#") 2
+                li.pagination__item
+                  a.pagination__link(href="#") 3 
+                li.pagination__item
+                  a.pagination__link(href="#") NEXT
+                    svg
+                      use(xlink:href='img/sprite.svg#angle-right')

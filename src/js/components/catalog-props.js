@@ -13,17 +13,6 @@ if (document.querySelector('.catalog')) {
     }
   });
 
-  vars.$customSelect.forEach(el => { 
-    el.addEventListener('click', (e) => {
-      e.currentTarget.classList.toggle('custom-select--open')
-    
-      if(e.target.classList.contains('custom-select__item')) {
-        let text = e.target.textContent;
-        e.currentTarget.querySelector('.custom-select__top').textContent = text;
-      }
-    });
-  });
-
 
 // free Delivery
 
@@ -31,6 +20,19 @@ if (document.querySelector('.catalog')) {
     e.currentTarget.closest('.free-delivery').style.visibility = "hidden";
   });
 };
+
+if(vars.$customSelect) {
+    vars.$customSelect.forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.currentTarget.classList.toggle('custom-select--open')
+
+        if (e.target.classList.contains('custom-select__item')) {
+          let text = e.target.textContent;
+          e.currentTarget.querySelector('.custom-select__top').textContent = text;
+        }
+      });
+    });
+}
 
 
 
