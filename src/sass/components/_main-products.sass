@@ -10,6 +10,8 @@
     margin: 0 18px
   &__btn
     font-size: 24px
+    @include mobile
+      font-size: 20px
   &__btn-center
     text-align: center
   &__more
@@ -47,3 +49,6 @@
   justify-content: space-between
   &__item
     padding-bottom: 60px
+    width: 19%
+    @include sm
+      width: 45%

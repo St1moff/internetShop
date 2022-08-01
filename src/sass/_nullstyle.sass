@@ -1,11 +1,17 @@
 html
 	box-sizing: border-box
+	overflow-x: hidden
+	max-width: 1920px
+	margin: 0 auto
+	position: relative
 *,
 *::before,
 *::after
 	box-sizing: inherit
 img
 	max-width: 100%
+body
+	overflow: hidden
 a
 	text-decoration: none
 	color: #000
@@ -125,6 +131,7 @@ main
 	justify-content: center
 	padding: 14px 18px
 	transition: 0.3s
+	z-index: 999
 	&:hover
 		transform: rotate(360deg)
 		transition: 0.3s

@@ -5,23 +5,74 @@
   &__list
     display: flex
     justify-content: space-between
+    @include xs
+      justify-content: center
+      flex-wrap: wrap
   &__item
-    width: 33%
     display: flex
-    min-height: 290px
+    height: 290px
+    max-width: 600px
+    @include lg-max
+      height: 235px
+    @include md
+      height: 180px
     &:not(:last-child)
       margin-right: 0.6%
+    @include xs
+      width: 80%
+      height: 250px
+      margin: 10px
+      margin-right: 0
+    @include mobile
+      height: 200px
+      width: 100%
     &--midseason
       background-color: #d7d7d7
     &--summer
       background-color: #EAE5E0
-    &--accesories
+    &--accessories
       background-color: #d7d7d7
   &__article
-    padding: 54px 60px
-  &-article__image--midseason
-    margin-right: 60px
+    padding: 54px 8%
+    min-width: 130px
+    max-width: 300px
+    @include lg-max
+      min-width: 170px
+    @include sm
+      min-width: 115px
+      padding: 54px 4%
+    @include mobile
+      min-width: none
+      max-width: 200px
+  
+  &-article__image
+    margin-right: 40px
+    @include sm
+      margin-right: 20px
+    &--summer
+      width: 50%
+      @include xs
+        width: auto
+      @include mobile
+        width: 40%
+    &--accessories
+      width: 50%
+      @include xs
+        width: auto
+      @include mobile
+        width: 40%
+
 
   &__title
-    font-size: 36px
+    font-size: 33px
     margin-bottom: 20px
+    @include lg-max
+      font-size: 20px
+    @include md
+      font-size: 16px
+    @include xs
+      font-size: 33px
+    @include mobile
+      font-size: 20px
+
+
