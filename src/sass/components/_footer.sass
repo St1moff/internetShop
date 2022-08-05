@@ -13,10 +13,15 @@
       padding-bottom: 40px
     
   &__column
+    @include xs-mobile
+      &:nth-child(1)
+        width: 160px
     &:nth-child(2)
       margin-left: -40px
       @include md
         margin-left: 0
+      @include xs-mobile
+        width: 120px
     &:nth-child(3)
       @include md
         width: 30%
@@ -31,11 +36,18 @@
     font-weight: 700
     margin: 0
     margin-bottom: 38px
+    @include xs-mobile
+      margin-bottom: 20px
+      font-size: 13px
   &__item
     &:not(:last-child)
       margin-bottom: 18px
+      @include xs-mobile
+        margin-bottom: 13px
       &:not(:last-child)
         margin-right: 43px
+        @include mobile
+          margin-right: 20px
   &__select
     display: flex
     align-items: center
@@ -54,10 +66,13 @@
       align-items: center
       .footer__item
         margin-bottom: 0
+
   &__link
     position: relative
     font-size: 13px
-    color: var(--color-tundora)    
+    color: var(--color-tundora)  
+    @include xs-mobile
+    font-size: 12px  
     &::after
       content: ""
       position: absolute
@@ -77,6 +92,10 @@
       font-size: 13px
       font-weight: 700
       color: var(--color-dark)
+      @include mobile
+        font-size: 11px
+
+
   &__form
     transform: translateY(3px)
     width: 650px
@@ -93,8 +112,15 @@
     justify-content: space-between
     border-top: 1px solid #eeeeee
     padding: 40px 0
+    @include xs-mobile
+      flex-direction: column
+      padding-bottom: 20px
   &__social
     margin-right: 12px
+    @include mobile
+      margin-left: 20px
+    @include xs-mobile
+      margin: 20px 0px
 .subscribe-form
   &__title
     color: var(--color-tundora)
@@ -132,6 +158,9 @@
         margin-right: 29px
         @include mobile
           margin-right: 10px
+        @include xs-mobile
+          margin-right: 30px
+
   &__link
     display: block
     width: 16px

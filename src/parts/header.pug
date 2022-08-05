@@ -1,6 +1,7 @@
     header.header
         .container.header__container
-            button.burger.btn-reset.header__burger бургер
+            button.burger.btn-reset.header__burger 
+                span.burger__line 
             nav.nav.header__nav
                 ul.nav__list 
                     li.nav__item
@@ -13,6 +14,9 @@
                         a.nav__link.main-link(href="#") Blog
                     li.nav__item
                         a.nav__link.main-link(href="#") Page 
+                button.nav__close.btn-reset 
+                    svg
+                        use(xlink:href='img/sprite.svg#next-arrow')
             a.logo.header__logo(href="#" aria-lable="logo")  
                 svg
                     use(xlink:href='img/sprite.svg#logo' )

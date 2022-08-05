@@ -8,6 +8,9 @@
   @include md
     min-height: auto
     height: 500px
+  @include xs-mobile
+    height: 550px
+
 
   &::before
     content: ""
@@ -24,8 +27,9 @@
     align-items: flex-start
     justify-content: center
     height: 100%
-    // padding-left: 300px
     width: auto
+    @include xs-mobile
+      padding-bottom: 150px
 
 
 
@@ -44,11 +48,15 @@
     @include sm
       font-size: 50px
       max-width: 380px
+    @include xs-mobile
+      font-size: 45px
+      max-width: 270px
   &__descr
     margin: 0
     font-size: 18px
     @include sm
       font-size: 14px
+
   &__image
     // right: 11vw
     bottom: 0
@@ -100,8 +108,10 @@
   background-color: var(--color-white)
   box-shadow: 0px 5px 30px 0 rgba(0, 0, 0, 0.1)
   padding: 10px
-  transform: translateY(50vw)
+  transform: translateY(60vw)
   transition: transform 0.3s
+  @include xs-mobile
+    left: 20px
   &--visible
     transform: translateY(0)
     transition: transform 0.3s

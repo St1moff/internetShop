@@ -2,6 +2,8 @@
   &__container
     padding-top: 50px
     padding-bottom: 30px
+    @include xs-mobile
+      padding-bottom: 0
   &__list
     display: flex
     justify-content: space-between
@@ -26,6 +28,8 @@
     @include mobile
       height: 200px
       width: 100%
+    @include xs-mobile
+      height: 170px
     &--midseason
       background-color: #d7d7d7
     &--summer
@@ -49,6 +53,7 @@
     margin-right: 40px
     @include sm
       margin-right: 20px
+
     &--summer
       width: 50%
       @include xs
@@ -74,5 +79,7 @@
       font-size: 33px
     @include mobile
       font-size: 20px
+    @include xs-mobile
+      font-size: 17px
 
 

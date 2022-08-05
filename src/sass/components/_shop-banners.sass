@@ -4,6 +4,8 @@
     justify-content: space-between
     padding-top: 46px
     padding-bottom: 96px
+    @include xs-mobile
+      flex-direction: column
 .shop-banner
   position: relative
   height: 420px
@@ -19,6 +21,8 @@
   background-position: center
   @include md
     height: 280px
+  @include xs-mobile
+    width: 100%
   &::before
     content: ""
     position: absolute
