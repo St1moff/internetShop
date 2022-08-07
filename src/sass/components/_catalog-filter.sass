@@ -1,5 +1,6 @@
 .catalog-contnet
   display: flex
+  position: relative
 .catalog-filters
   margin-right: 30px
   width: 309px
@@ -13,8 +14,35 @@
     background-image: url('./img/kz-close.png')
     background-position: left center
     background-repeat: no-repeat   
+  @include xs
+    display: none
+    position: absolute
+    width: 100%
+    left: 0
+    top: 65px
+    padding-left: 5px
+    padding-right: 10px
+    margin: 0
+    z-index: 2
+    background-color: #fff
+.catalog-mobile-filters
+  display: none
+  align-items: center
+  text-transform: uppercase
+  font-size: 12px
+  font-weight: 700
+  margin-bottom: 15px
+  svg
+    width: 15px
+    height: 15px
+    margin-right: 5px
+  @include xs
+    display: flex
+.catalog-filters--open
+  display: block
 .catalog-filter
   border-top: 1px solid #eeeeee
+  min-width: 270px
   &__top
     display: flex
     cursor: pointer
@@ -75,6 +103,7 @@
       margin: 0
   &:last-child
     border-bottom: 1px solid #aaa
+  
 .custom-checkbox
   display: inline-block
   cursor: pointer
@@ -118,13 +147,18 @@
     display: flex
     flex-wrap: wrap
     padding-top: 2px
+    @include sm
+      justify-content: space-between
   &__item
     margin-bottom: 48px
+    @include sm
+      margin-right: 0 !important
 [data-grid-columns="4"] 
   .catalog-grid__item
     width: 22.7%
-
-    
+    @include sm
+      width: 48%
+      margin-bottom: 30px !important
     &:not(:nth-child(4n))
       margin-right: 3%
     &:nth-last-child(-n+4) 
@@ -180,6 +214,8 @@
         width: 100%
     &:hover
       color: var(--color-dark)
+  @include sm
+    display: none
 .catalog-choice
   font-size: 0
   display: none
@@ -194,7 +230,8 @@
     margin-right: 4px
     transition: 0.3s 
     height: 24px
-
+    @include xs
+      margin-top: 20px
     svg
       fill: var(--color-tundora)
       width: 12px
@@ -212,6 +249,9 @@
   &__clear
     position: relative
     font-size: 13px
+    @include xs
+      margin-top: 20px
+      margin-left: 10px
     &::before
       content: ""
       position: absolute

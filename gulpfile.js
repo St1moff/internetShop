@@ -1,4 +1,10 @@
-const {src, dest, series, watch, parallel} = require('gulp')
+const {
+  src,
+  dest,
+  series,
+  watch,
+  parallel
+} = require('gulp')
 const Sass = require('gulp-sass')(require('sass'))
 const Pug = require('gulp-pug')
 const cleanCSS = require('gulp-clean-css');
@@ -23,10 +29,10 @@ const plumber = require('gulp-plumber');
 
 
 
-function fonts () {
-	return src('src/fonts/**.ttf')
-		.pipe(ttf2woff2())
-		.pipe(dest('app/fonts/'))
+function fonts() {
+  return src('src/fonts/**.ttf')
+    .pipe(ttf2woff2())
+    .pipe(dest('app/fonts/'))
 }
 
 const checkWeight = (fontname) => {
@@ -84,13 +90,13 @@ const fontsStyle = (done) => {
     if (items) {
       let c_fontname;
       for (var i = 0; i < items.length; i++) {
-				let fontname = items[i].split('.');
-				fontname = fontname[0];
+        let fontname = items[i].split('.');
+        fontname = fontname[0];
         let font = fontname.split('-')[0];
         let weight = checkWeight(fontname);
 
         if (c_fontname != fontname) {
-          fs.appendFile(srcFonts, '@include font-face("' + font + '", "' + fontname + '", ' + weight +')\r\n', cb);
+          fs.appendFile(srcFonts, '@include font-face("' + font + '", "' + fontname + '", ' + weight + ')\r\n', cb);
         }
         c_fontname = fontname;
       }
@@ -103,11 +109,11 @@ const fontsStyle = (done) => {
 
 function pug() {
   return src('src/*.pug')
-  .pipe(include({
-    prefix: '@@'
-  }))
-  .pipe(Pug())
-  .pipe(dest('app'))
+    .pipe(include({
+      prefix: '@@'
+    }))
+    .pipe(Pug())
+    .pipe(dest('app'))
 }
 
 
@@ -120,59 +126,59 @@ function html() {
       collapseWhitespace: true
     }))
     .pipe(dest('app'))
-}  
+}
 
 function sass() {
   return src('src/sass/**.sass')
-      .pipe(sourcemaps.init())
-      .pipe(Sass()).on('error', notify.onError())
-      .pipe(autoprefixer({
-        cascade: false,
-        overrideBrowserslist: ['last 2 versions']
-      }))
-      .pipe(cleanCSS({
+    .pipe(sourcemaps.init())
+    .pipe(Sass()).on('error', notify.onError())
+    .pipe(autoprefixer({
+      cascade: false,
+      overrideBrowserslist: ['last 2 versions']
+    }))
+    .pipe(cleanCSS({
       level: 2
     }))
-      .pipe(sourcemaps.write('.'))
-      .pipe(dest('app'))
-} 
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest('app'))
+}
 
 function imgToApp() {
   return src(['src/img/**.jpg', 'src/img/**.png', 'src/img/**.jpeg'])
-  .pipe(dest('app/img'))
+    .pipe(dest('app/img'))
 }
 
 function svgSprites() {
   return src(['src/img/svg/**.svg'])
-  .pipe(svgSprite({
-    mode: {
-      stack: {
-        sprite: "../sprite.svg"
+    .pipe(svgSprite({
+      mode: {
+        stack: {
+          sprite: "../sprite.svg"
+        }
       }
-    }
-  }))
-  .pipe(dest('app/img'))
+    }))
+    .pipe(dest('app/img'))
 }
 
-function resources () {
-	return src('./src/resources/**')
-		.pipe(dest('./app/resources'))
+function resources() {
+  return src('./src/resources/**')
+    .pipe(dest('./app/resources'))
 }
 
-function scripts () {
-	return src('src/js/main.js')
+function scripts() {
+  return src('src/js/main.js')
     .pipe(plumber(
       notify.onError({
         title: "JS",
         message: "Error: <%= error.message %>"
       })
     ))
-		.pipe(webpackStream({
-			mode: 'development',
-			output: {
-				filename: 'main.js',
-			},
-			module: {
+    .pipe(webpackStream({
+      mode: 'development',
+      output: {
+        filename: 'main.js',
+      },
+      module: {
         rules: [{
           test: /\.m?js$/,
           exclude: /node_modules/,
@@ -185,19 +191,21 @@ function scripts () {
                 }]
               ]
             }
-          }}]
-        },
-      }))
-      .on('error', function (err) {
-        console.error('WEBPACK ERROR', err);
-        this.emit('end'); // Don't stop the rest of the task
-      })
-		.pipe(sourcemaps.init())
-		.pipe(uglify().on("error", notify.onError()))
-		.pipe(sourcemaps.write('.'))
-		.pipe(dest('app/js'))
+          }
+        }]
+      },
+    }))
+    .on('error', function (err) {
+      console.error('WEBPACK ERROR', err);
+      this.emit('end'); // Don't stop the rest of the task
+    })
+    .pipe(sourcemaps.init())
+    .pipe(uglify().on("error", notify.onError()))
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest('app/js'))
 
 }
+
 function vendorJS() {
   // const modules = [
   //   'node_modules/swiper/swiper-bundle.min.js',
@@ -205,7 +213,7 @@ function vendorJS() {
   // ];
 
   //return src(modules)
-    return src('src/js/vendor/**')
+  return src('src/js/vendor/**')
     .pipe(dest('app/vendorFiles'));
 };
 
@@ -217,7 +225,8 @@ function vendorCSS() {
   // return src(modules)
   return src('src/sass/vendor/**')
     .pipe(dest('app/vendorFiles'));
-  };
+};
+
 function clear() {
   return del('app')
 }
@@ -270,44 +279,44 @@ function sassBuild() {
     .pipe(dest('app'))
 }
 
-  function scriptsBuild() {
-    return src('src/js/main.js')
-      .pipe(plumber(
-        notify.onError({
-          title: "JS",
-          message: "Error: <%= error.message %>"
-        })
-      ))
-      .pipe(webpackStream({
-        mode: 'production',
-        output: {
-          filename: 'main.js',
-        },
-        module: {
-          rules: [{
-            test: /\.m?js$/,
-            exclude: /node_modules/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                presets: [
-                  ['@babel/preset-env', {
-                    targets: "defaults"
-                  }]
-                ]
-              }
-            }
-          }]
-        },
-      }))
-      .on('error', function (err) {
-        console.error('WEBPACK ERROR', err);
-        this.emit('end'); // Don't stop the rest of the task
+function scriptsBuild() {
+  return src('src/js/main.js')
+    .pipe(plumber(
+      notify.onError({
+        title: "JS",
+        message: "Error: <%= error.message %>"
       })
-      .pipe(uglify().on("error", notify.onError()))
-      .pipe(dest('app/js'))
+    ))
+    .pipe(webpackStream({
+      mode: 'production',
+      output: {
+        filename: 'main.js',
+      },
+      module: {
+        rules: [{
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', {
+                  targets: "defaults"
+                }]
+              ]
+            }
+          }
+        }]
+      },
+    }))
+    .on('error', function (err) {
+      console.error('WEBPACK ERROR', err);
+      this.emit('end'); // Don't stop the rest of the task
+    })
+    .pipe(uglify().on("error", notify.onError()))
+    .pipe(dest('app/js'))
 
-  }
+}
 
 
 
@@ -317,25 +326,24 @@ exports.build = series(clear, parallel(pug, scriptsBuild, fonts, resources, imgT
 
 // deploy Hosting
 const deploy = () => {
-	let conn = ftp.create({
-		host: '',
-		user: '',
-		password: '',
-		parallel: 10,
-		log: gutil.log
-	});
+  let conn = ftp.create({
+    host: '',
+    user: '',
+    password: '',
+    parallel: 10,
+    log: gutil.log
+  });
 
-	let globs = [
-		'app/**',
-	];
+  let globs = [
+    'app/**',
+  ];
 
-	return src(globs, {
-			base: './app',
-			buffer: false
-		})
-		.pipe(conn.newer('')) // only upload newer files
-		.pipe(conn.dest(''));
+  return src(globs, {
+      base: './app',
+      buffer: false
+    })
+    .pipe(conn.newer('')) // only upload newer files
+    .pipe(conn.dest(''));
 }
 
 exports.deploy = deploy;
-  

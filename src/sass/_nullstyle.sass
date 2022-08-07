@@ -52,8 +52,8 @@ p
 .container
 	margin: 0 auto
 	padding: 0 50px
-	
-	@include xs-mobile
+
+	@include sm
 		padding: 0 20px
 
 .js-focus-visible
@@ -135,6 +135,8 @@ main
 	padding: 14px 18px
 	transition: 0.3s
 	z-index: 999
+	user-select: none
 	&:hover
 		transform: rotate(360deg)
 		transition: 0.3s
+		user-select: none

@@ -1,23 +1,31 @@
 .card-main
   margin-top: 63px
 
-.card-content 
+.card-content
   padding-top: 23px
   &__bottom
     padding-top: 95px
 .card-top
   .container-narrow
     display: flex
-  
+    flex-wrap: wrap
+
   &__left
     width: 57.5%
+    @include xs
+      width: 100%
   &__right
     width: calc(100% - 57.5%)
     padding-left: 10.7%
-    padding-top: 62px 
+    padding-top: 62px
+    @include lg-max
+      padding-left: 5%
+    @include xs
+      width: 100%
+      padding-left: 0
 
 .card-info
-  &__prop 
+  &__prop
     padding-left: 19px
     margin-bottom: 16px
   &__title
@@ -63,7 +71,7 @@
   align-items: flex-end
   &__current
     font-weight: 700
-    font-size: 24px 
+    font-size: 24px
     margin-right: 20px
   &__old
     color: #959595
@@ -77,18 +85,18 @@
     color: #858585
     font-weight: 700
     font-size: 10px
-    text-transform: uppercase     
+    text-transform: uppercase
     span
       color: var(--color-dark)
       margin-left: 3px
-  &__list 
+  &__list
     margin-left: 5.2px
     display: flex
-    align-items: center 
+    align-items: center
   &__item
     &:not(:last-child)
       margin-right: 13px
-  &__btn  
+  &__btn
     position: relative
     width: 24px
     height: 24px
@@ -120,7 +128,7 @@
     color: #858585
     font-weight: 700
     font-size: 10px
-    text-transform: uppercase     
+    text-transform: uppercase
     span
       color: var(--color-dark)
       margin-left: 3px
@@ -138,20 +146,24 @@
     height: 11px
     fill: #d24242
 
-  &__list 
+  &__list
     display: flex
-    align-items: center 
+    align-items: center
+    @include md
+      flex-wrap: wrap
+
   &__item
+    @include md
+      margin-bottom: 5px
     &:not(:last-child)
       margin-right: 5px
-  &__btn  
+  &__btn
     position: relative
     width: 42px
     height: 32px
     transition: 0.3s
     color: #858585
     font-size: 13px
-    
 
     &::before
       content: ""
@@ -204,6 +216,7 @@
 .card-bottom
   display: flex
   justify-content: space-between
+  align-items: center
   flex-wrap: wrap
   margin-top: 50px
   font-size: 10px
@@ -211,16 +224,29 @@
   text-transform: uppercase
   span
     color: #858585
+  &__item
+    @include md
+      margin-bottom: 10px
+      margin-right: 10px
   &__social
     display: flex
     align-items: center
     margin-top: 15px
     span
       margin-right: 12px
+    @include md
+      display: flex
+      margin-top: 0
+      margin-right: 0
+  .social__item:not(last-child)
+    @include md
+      margin-right: 10px
 
 .card-description
   display: flex
   height: 300px
+  @include xs-mobile
+    flex-wrap: wrap
   .simplebar-track.simplebar-vertical
     transform: translate3d(0px, -2px, 0px)
     width: 3px
@@ -236,19 +262,30 @@
       left: 0
       right: 0
       height: 100%
-
-
-
+  @include lg-max
+    height: 100%
   &__left
     width: 16%
+    @include mobile
+      width: 30%
+    @include xs-mobile
+      width: 100%
   &__right
-    width: 84%
+    width: 70%
     padding-left: 124px
     padding-right: 110px
+    @include md
+      padding-left: 25px
+      padding-right: 25px
+    @include xs-mobile
+      padding-top: 40px
+      width: 100%
+
   &__navigation
     padding: 32px 0
     width: 100%
     max-height: 200px
+    padding-right: 10px
   &__item
     &:not(:last-child)
       margin-bottom: 50px
@@ -297,13 +334,13 @@
     opacity: 1
     background-color: var(--color-dark)
     &::before
-      content: ""      
+      content: ""
       position: absolute
       border-radius: 100%
       width: 17px
-      height: 17px    
-      background-color: #eeeeee 
-      transform: translate(-50%,-50%) 
+      height: 17px
+      background-color: #eeeeee
+      transform: translate(-50%,-50%)
       left: 50%
-      top: 50% 
-      z-index: -1  
+      top: 50%
+      z-index: -1

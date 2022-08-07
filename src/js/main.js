@@ -11,6 +11,7 @@ import './components/card-slider.js';
 import './components/card-bottom-tabs.js';
 import './components/products.js';
 import './components/burger.js'
+import './components/mobile-filters.js'
 import SimpleBar from 'simplebar';
 import vars from './_vars'
 

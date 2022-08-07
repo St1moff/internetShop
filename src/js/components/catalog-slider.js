@@ -8,11 +8,16 @@ const catalogSlider = new Swiper('.hero-catalog__slider', {
     nextEl: '.hero-next-btn',
     prevEl: '.hero-prev-btn',
   },
+  pagination: {
+    el: '.hero--pag',
+    type: 'bullets',
+    clickable: true
+  },
 });
 
 const relatedSlider = new Swiper(vars.$cardRelatedSlider, {
   loop: true,
-  slidesPerView: 4,
+  slidesPerView: 2,
   slidesPerGroup: 3,
   spaceBetween: 30,
   pagination: {
@@ -20,7 +25,9 @@ const relatedSlider = new Swiper(vars.$cardRelatedSlider, {
     type: 'bullets',
     clickable: true
   },
+  breakpoints: {
+    650: {
+      slidesPerView: 4
+    }
+  }
 });
-
-
-
